@@ -18,14 +18,14 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/signin",
   },
-  // Configure one or more authentication providers
+  // Configure one or more authentication providers. Google is the configured provider this time around.
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
-    // ...add more providers here
+    // ...add more providers here.
   ],
 };
 

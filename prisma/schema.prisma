@@ -55,8 +55,22 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  userRole UserRole?
 }
 
+model UserRole {
+  id String @id @default(cuid())
+  role Role @default(STUDENT)
+  User User? @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+
+
+enum Role {
+  STUDENT
+  LECTURER
+}
 model VerificationToken {
   identifier String
   token      String   @unique
