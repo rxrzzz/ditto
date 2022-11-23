@@ -17,10 +17,10 @@ export const authRouter = router({
     .input(
       z.object({
         role: z.nativeEnum(RoleEnums) || z.undefined(),
-        userId: z.string(),
+        userId: z.string() || z.undefined(),
       })
     )
-    .query(async ({ ctx, input }) => {
+    .mutation(async ({ ctx, input }) => {
       const user = await ctx.prisma.user.findUnique({
         where: {
           id: input.userId,
