@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        grotesk: ["Clash Grotesk", "sans-serif"],
+        alpino: ["Alpino", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

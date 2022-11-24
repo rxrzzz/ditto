@@ -18,10 +18,9 @@ const roles = [
 
 export default function Role() {
   const router = useRouter();
-  const [selected, setSelected] = useState<string>(null);
+  const [selected, setSelected] = useState<string | null>(null);
   const { data } = useSession();
   const userId = data?.user?.id;
-
 
   const { mutate } = trpc.auth.createRole.useMutation({
     onSuccess: () => {
@@ -33,7 +32,9 @@ export default function Role() {
     },
   });
   const handleSubmit = () => {
-    mutate({ role: selected.toUpperCase(), userId: userId });
+    if (selected !== "" && userId) {
+      mutate({ role: selected.toUpperCase(), userId: userId });
+    }
   };
   return (
     <div className="w-full px-4 py-16">
