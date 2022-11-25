@@ -118,10 +118,58 @@ const Home: NextPage = () => {
           </p>
           <button
             className="mt-3 rounded-xl bg-[#0857A0] 
-              p-3 text-white font-medium"
+              p-3 font-medium text-white"
           >
             Start Learning
           </button>
+        </div>
+      </section>
+      <section className="my-40">
+        <div className="mx-auto w-11/12 rounded-xl bg-[#0857A0] py-40 font-grotesk text-white ">
+          <h1 className="mx-auto mb-24 max-w-[900px] text-center text-6xl font-bold">
+            Train yourself with real world skills and knowledge.
+          </h1>
+          <div className="flex justify-evenly ">
+            <article className="min-h-[300px] w-3/12">
+              <Image
+                alt="Course 1 "
+                className="h-full w-full rounded-xl object-cover"
+                src="/course1.jpg"
+                width={1000}
+                height={1000}
+              />
+              <h2 className="mt-4 text-xl font-medium opacity-90">
+                Creative Writing: Crafting Personal Essays With Impact
+              </h2>
+              <button className="text-[#00DDB3] font-medium underline">Learn More</button>
+            </article>
+            <article className="min-h-[300px] w-3/12">
+              <Image
+                alt="Course 2 "
+                className="h-full w-full rounded-xl object-cover"
+                src="/course2.jpg"
+                width={1000}
+                height={1000}
+              />
+              <h2 className="mt-4 text-xl font-medium opacity-90">
+                Creative Writing: Crafting Personal Essays With Impact
+              </h2>
+              <button className="text-[#00DDB3] font-medium underline">Learn More</button>
+            </article>
+            <article className="min-h-[300px] w-3/12">
+              <Image
+                alt="Course 3 "
+                src="/course3.jpg"
+                className="h-full w-full rounded-xl object-cover"
+                width={1000}
+                height={1000}
+              />
+              <h2 className="mt-4 text-xl font-medium opacity-90">
+                Creative Writing: Crafting Personal Essays With Impact
+              </h2>
+              <button className="text-[#00DDB3] font-medium underline">Learn More</button>
+            </article>
+          </div>
         </div>
       </section>
     </>
