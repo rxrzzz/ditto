@@ -117,7 +117,7 @@ const Home: NextPage = () => {
             needs.
           </p>
           <button
-            className="mt-3 rounded-xl bg-[#0857A0] 
+            className="mt-3 rounded-xl bg-[#00DDB3] 
               p-3 font-medium text-white"
           >
             Start Learning
