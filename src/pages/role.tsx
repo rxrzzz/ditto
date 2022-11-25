@@ -31,11 +31,11 @@ export default function Role() {
       window.alert(error.message);
     },
   });
-  const handleSubmit = () => {
-    if (selected !== "" && userId) {
-      mutate({ role: selected.toUpperCase(), userId: userId });
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (selected !== "" && userId) {
+  //     mutate({ role: selected.toUpperCase(), userId: userId });
+  //   }
+  // };
   return (
     <div className="w-full px-4 py-16">
       <div className="mx-auto w-full max-w-md">
@@ -89,7 +89,7 @@ export default function Role() {
           </div>
           {selected ? (
             <>
-              <button onClick={handleSubmit}>Select Role</button>
+              {/* <button onClick={handleSubmit}>Select Role</button> */}
             </>
           ) : null}
         </RadioGroup>
