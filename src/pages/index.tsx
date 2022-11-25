@@ -65,30 +65,37 @@ const Home: NextPage = () => {
             </div>
           </div>
         </main>
-        <aside className="  lg:w-4/12 mt-12 md:mt-14 lg:mt-0">{home}</aside>
+        <aside className="  mt-12 md:mt-14 lg:mt-0 lg:w-4/12">{home}</aside>
       </section>
       <section
-        className="flex w-full flex-wrap justify-evenly
+        className="
+        
        bg-[#00DDB3] py-12 font-grotesk"
       >
-        <div className="mx-auto w-11/12 lg:w-2/12">
-          <h1 className="text-5xl font-medium opacity-90">
-            Online Learning Designed For Real Life.
-          </h1>
-        </div>
-        <div className="mx-auto w-11/12 lg:w-2/12">
-          <h2>User-friendly platform to learn.</h2>
-          <p>
-            Packed with modern technology classroom learning which used to be
-            done conventionally.
-          </p>
-        </div>
-        <div className="mx-auto w-11/12 lg:w-2/12">
-          <h2>Packed with modern technology.</h2>
-          <p>
-            learning theory, computer-based training, online learning and many
-            more.
-          </p>
+        <div className="mx-auto flex w-full flex-wrap justify-between">
+          <div className="mx-auto my-4 w-11/12 lg:my-0 lg:w-2/12 ">
+            <h1 className="max-w-[300px] text-4xl font-bold opacity-80 lg:text-5xl">
+              Online Learning Designed For Real Life.
+            </h1>
+          </div>
+          <div className="mx-auto w-11/12 py-4 lg:w-2/12 lg:py-0">
+            <h2 className="my-2 text-xl font-bold opacity-75 ">
+              User-friendly platform to learn.
+            </h2>
+            <p className="max-w-[300px]  text-lg ">
+              Packed with modern technology classroom learning which used to be
+              done conventionally.
+            </p>
+          </div>
+          <div className="mx-auto w-11/12 py-4 lg:w-2/12 lg:py-0">
+            <h2 className="my-2 text-xl font-bold opacity-75">
+              Packed with modern technology.
+            </h2>
+            <p className="max-w-[300px] text-lg">
+              learning theory, computer-based training, online learning and many
+              more.
+            </p>
+          </div>
         </div>
       </section>
     </>
