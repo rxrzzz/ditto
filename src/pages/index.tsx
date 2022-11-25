@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { useLottie } from "lottie-react";
 import homeAnimation from "../../public/homelottie.json";
+import Image from "next/image";
 // import { signIn, signOut, useSession } from "next-auth/react";
 
 // import { trpc } from "../utils/trpc";
@@ -39,12 +40,12 @@ const Home: NextPage = () => {
             >
               Ugrade Your Skill.
             </p>
-            <h1 className=" my-3  text-5xl md:text-5xl lg:text-7xl">
+            <h1 className=" my-3  text-4xl font-bold lg:text-6xl xl:text-7xl">
               Explore courses to boost{" "}
               <span className="text-[#0857A0]">knowledge</span> and{" "}
               <span className="text-[#00DDB3]"> creativity.</span>
             </h1>
-            <p className="mb-6 text-xl leading-tight">
+            <p className="mb-6 text-xl leading-tight opacity-80">
               Join a growing community, get peer insights and discover
               <br />
               exciting business opportunities and collaborations.
@@ -70,7 +71,7 @@ const Home: NextPage = () => {
       <section
         className="
         
-       bg-[#00DDB3] py-12 font-grotesk"
+       bg-[#00DDB3] py-24 font-grotesk md:py-48"
       >
         <div className="mx-auto flex w-full flex-wrap justify-between">
           <div className="mx-auto my-4 w-11/12 lg:my-0 lg:w-2/12 ">
@@ -96,6 +97,31 @@ const Home: NextPage = () => {
               more.
             </p>
           </div>
+        </div>
+      </section>
+      <section className="my-12 flex flex-wrap justify-evenly font-grotesk">
+        <Image
+          src="/coursementor.jpg"
+          alt="Course Mentor"
+          className="mx-auto w-11/12 rounded-xl md:w-5/12"
+          width={900}
+          height={500}
+        />
+        <div className="mx-auto w-11/12 md:w-4/12 ">
+          <h1 className="mt-16 max-w-[300px] text-4xl font-bold opacity-80 lg:text-5xl">
+            Experienced Course Mentors
+          </h1>
+          <p className="mt-3 max-w-[300px] text-xl">
+            Ditto can be utilized to present various kinds of learning
+            materials, campus academic systems and various other educational
+            needs.
+          </p>
+          <button
+            className="mt-3 rounded-xl bg-[#0857A0] 
+              p-3 text-white font-medium"
+          >
+            Start Learning
+          </button>
         </div>
       </section>
     </>
