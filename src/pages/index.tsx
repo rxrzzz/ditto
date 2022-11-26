@@ -5,15 +5,14 @@ import homeAnimation from "../../public/homelottie.json";
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 
-import { trpc } from "../utils/trpc";
-
 const Home: NextPage = () => {
+  /*lottie config options */
   const options = {
     animationData: homeAnimation,
     loop: true,
   };
-
   const { View: home } = useLottie(options);
+
   return (
     <>
       <Head>
@@ -67,6 +66,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </main>
+        {/*lottie animation */}
         <aside className="  mt-12 md:mt-14 lg:mt-0 lg:w-4/12">{home}</aside>
       </section>
       <section
@@ -134,7 +134,10 @@ const Home: NextPage = () => {
           className="mx-auto flex w-[98%] max-w-[1800px] flex-col rounded-xl bg-[#0857A0] py-16
          font-grotesk text-white  md:py-32 lg:py-40"
         >
-          <h1 className="mx-auto mb-12 max-w-[900px] text-center text-3xl font-bold md:mb-16 md:text-4xl lg:mb-24 lg:text-5xl xl:text-6xl">
+          <h1
+            className="mx-auto mb-12 max-w-[900px] text-center text-3xl
+           font-bold md:mb-16 md:text-4xl lg:mb-24 lg:text-5xl xl:text-6xl"
+          >
             Train yourself with real world skills and knowledge.
           </h1>
           <div className="flex flex-wrap justify-evenly">
@@ -210,11 +213,6 @@ export default Home;
 const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();
 
-  const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery(
-    undefined, // no input
-    { enabled: sessionData?.user !== undefined }
-  );
-
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       {sessionData && (
@@ -222,9 +220,7 @@ const AuthShowcase: React.FC = () => {
           Logged in as {sessionData?.user?.email}
         </p>
       )}
-      {secretMessage && (
-        <p className="text-2xl text-blue-500">{secretMessage}</p>
-      )}
+
       <button
         className="rounded-md border border-black bg-violet-50 px-4 py-2 text-xl shadow-lg hover:bg-violet-100"
         onClick={sessionData ? () => signOut() : () => signIn()}

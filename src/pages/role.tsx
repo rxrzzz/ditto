@@ -38,7 +38,7 @@ export default function Role() {
     },
   });
   const handleSubmit = () => {
-    console.log({selected, userId})
+    console.log({ selected, userId });
     if (selected && userId) {
       mutate({ role: selected, userId: userId });
     }
