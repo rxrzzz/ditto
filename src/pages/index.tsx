@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             >
               Ugrade Your Skill.
             </p>
-            <h1 className=" my-3  text-4xl font-bold lg:text-6xl xl:text-7xl">
+            <h1 className=" my-3  text-5xl font-bold lg:text-6xl xl:text-7xl">
               Explore courses to boost{" "}
               <span className="text-[#0857A0]">knowledge</span> and{" "}
               <span className="text-[#00DDB3]"> creativity.</span>
@@ -71,29 +71,32 @@ const Home: NextPage = () => {
       <section
         className="
         
-       bg-[#00DDB3] py-24 font-grotesk md:py-48"
+       bg-[#0857A0] py-24 font-grotesk md:py-48"
       >
-        <div className="mx-auto flex w-full flex-wrap justify-between">
+        <div className="mx-auto flex w-full flex-wrap justify-between text-white">
           <div className="mx-auto my-4 w-11/12 lg:my-0 lg:w-2/12 ">
-            <h1 className="max-w-[300px] text-4xl font-bold opacity-80 lg:text-5xl">
-              Online Learning Designed For Real Life.
+            <h1 className="max-w-[300px] text-4xl font-bold  lg:text-6xl">
+              Online Learning{" "}
+              <span className="underline decoration-[#00DDB3]">
+                Designed For Real Life.
+              </span>
             </h1>
           </div>
           <div className="mx-auto w-11/12 py-4 lg:w-2/12 lg:py-0">
-            <h2 className="my-2 text-xl font-bold opacity-75 ">
+            <h2 className="my-2 text-xl font-bold md:text-2xl  ">
               User-friendly platform to learn.
             </h2>
-            <p className="max-w-[300px]  text-lg ">
+            <p className="max-w-[300px]  text-lg md:text-xl">
               Packed with modern technology classroom learning which used to be
               done conventionally.
             </p>
           </div>
           <div className="mx-auto w-11/12 py-4 lg:w-2/12 lg:py-0">
-            <h2 className="my-2 text-xl font-bold opacity-75">
+            <h2 className="my-2 text-xl font-bold md:text-2xl  ">
               Packed with modern technology.
             </h2>
-            <p className="max-w-[300px] text-lg">
-              learning theory, computer-based training, online learning and many
+            <p className="max-w-[300px]  text-lg md:text-xl">
+              Learning theory, computer-based training, online learning and many
               more.
             </p>
           </div>
@@ -108,17 +111,18 @@ const Home: NextPage = () => {
           height={500}
         />
         <div className="mx-auto w-11/12 md:w-4/12 ">
-          <h1 className="mt-16 max-w-[300px] text-4xl font-bold opacity-80 lg:text-5xl">
-            Experienced Course Mentors
+          <h1 className="mt-16 max-w-[300px] text-4xl font-bold opacity-80 lg:text-6xl">
+            <span className="underline decoration-[#00DDB3]"> Experienced</span>{" "}
+            Course Mentors
           </h1>
-          <p className="mt-3 max-w-[300px] text-xl">
+          <p className="mt-3 max-w-[300px] text-xl font-medium opacity-70">
             Ditto can be utilized to present various kinds of learning
             materials, campus academic systems and various other educational
             needs.
           </p>
           <button
-            className="mt-3 rounded-xl bg-[#00DDB3] 
-              p-3 font-medium text-white"
+            className="mt-6 rounded-xl bg-[#0857A0] 
+              p-3 font-bold text-white "
           >
             Start Learning
           </button>
@@ -126,14 +130,14 @@ const Home: NextPage = () => {
       </section>
       <section className="my-40">
         <div
-          className="mx-auto w-11/12 rounded-xl bg-[#0857A0] py-16 font-grotesk text-white
-         md:py-32 lg:py-40 "
+          className="mx-auto flex w-[98%] max-w-[1800px] flex-col rounded-xl bg-[#0857A0] py-16
+         font-grotesk text-white  md:py-32 lg:py-40"
         >
-          <h1 className="mx-auto lg:mb-24 md:mb-16 mb-12 max-w-[900px] text-center text-3xl font-bold md:text-4xl lg:text-5xl xl:text-6xl">
+          <h1 className="mx-auto mb-12 max-w-[900px] text-center text-3xl font-bold md:mb-16 md:text-4xl lg:mb-24 lg:text-5xl xl:text-6xl">
             Train yourself with real world skills and knowledge.
           </h1>
           <div className="flex flex-wrap justify-evenly">
-            <article className="h-fit mb-8 mx-auto w-11/12 md:w-5/12 lg:w-3/12">
+            <article className="mx-auto mb-8 h-fit w-11/12 md:w-5/12 lg:w-3/12">
               <Image
                 alt="Course 1 "
                 className="h-full w-full rounded-xl object-cover"
@@ -144,11 +148,11 @@ const Home: NextPage = () => {
               <h2 className="mt-4 text-xl font-medium opacity-90">
                 Creative Writing: Crafting Personal Essays With Impact
               </h2>
-              <button className="font-medium text-[#00DDB3] underline">
+              <button className="font-medium text-[#0857A0] underline">
                 Learn More
               </button>
             </article>
-            <article className=" mx-auto h-fit mb-8 w-11/12 md:w-5/12 lg:w-3/12">
+            <article className=" mx-auto mb-8 h-fit w-11/12 md:w-5/12 lg:w-3/12">
               <Image
                 alt="Course 2 "
                 className="h-full w-full rounded-xl object-cover"
@@ -159,11 +163,11 @@ const Home: NextPage = () => {
               <h2 className="mt-4 text-xl font-medium opacity-90">
                 Creative Writing: Crafting Personal Essays With Impact
               </h2>
-              <button className="font-medium text-[#00DDB3] underline">
+              <button className="font-medium text-[#0857A0] underline">
                 Learn More
               </button>
             </article>
-            <article className="h-fit mb-8 mx-auto w-11/12 md:w-5/12 lg:w-3/12">
+            <article className="mx-auto mb-8 h-fit w-11/12 md:w-5/12 lg:w-3/12">
               <Image
                 alt="Course 3 "
                 src="/course3.jpg"
@@ -174,13 +178,28 @@ const Home: NextPage = () => {
               <h2 className="mt-4 text-xl font-medium opacity-90">
                 Creative Writing: Crafting Personal Essays With Impact
               </h2>
-              <button className="font-medium text-[#00DDB3] underline">
+              <button className="font-medium text-[#0857A0] underline">
                 Learn More
               </button>
             </article>
           </div>
+          <button
+            className="mx-auto mt-12
+               w-fit rounded-xl bg-[#00DDB3] p-3 font-bold text-black"
+          >
+            View More Courses
+          </button>
         </div>
       </section>
+      {/* <footer>
+        <div>
+          <h1>Dittto.</h1>
+          <p>
+            Dittto is a global online learning platform that offers anyone,
+            anywhere access to online courses.
+          </p>
+        </div>
+      </footer> */}
     </>
   );
 };
