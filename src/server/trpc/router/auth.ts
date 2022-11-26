@@ -8,10 +8,12 @@ enum Roles {
 }
 
 export const authRouter = router({
+  /*get all available data about the current session */
   getSession: publicProcedure.query(({ ctx }) => {
     return ctx.session;
   }),
 
+  /*create role for user i.e student / lecturer */
   createRole: protectedProcedure
     .input(
       z.object({
@@ -20,12 +22,20 @@ export const authRouter = router({
       })
     )
     .mutation(async ({ ctx, input }) => {
+      /*check if user with the provided id is available in the database */
       const user = await ctx.prisma.user.findUnique({
         where: {
           id: input.userId,
         },
       });
-      if (user) {
+      /* check if the user does not have an assigned role yet*/
+      const userWithoutRole = await ctx.prisma.userRole.findUnique({
+        where: {
+          userId: input.userId,
+        },
+      });
+      /*if a user is found without a role, proceed to create a userRole object instance */
+      if (user && !userWithoutRole) {
         const userRole = await ctx.prisma.userRole.create({
           data: {
             role: input.role,
@@ -36,6 +46,7 @@ export const authRouter = router({
       }
     }),
 
+  /*get user role with the provided user id */
   getRole: protectedProcedure
     .input(z.object({ userId: z.string().nullish() }))
     .query(async ({ input, ctx }) => {
