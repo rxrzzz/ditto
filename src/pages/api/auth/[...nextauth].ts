@@ -16,7 +16,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   pages: {
-    signIn: "/auth/signin",
+    signIn: "/auth/login",
   },
   // Configure one or more authentication providers. Google is the configured provider this time around.
   adapter: PrismaAdapter(prisma),

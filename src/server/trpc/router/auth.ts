@@ -1,7 +1,11 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 
-const ROLE = ["STUDENT", "LECTURER"] as const;
+enum Roles {
+  STUDENT = "STUDENT",
+  LECTURER = "LECTURER",
+}
 
 export const authRouter = router({
   getSession: publicProcedure.query(({ ctx }) => {
@@ -15,7 +19,7 @@ export const authRouter = router({
   createRole: protectedProcedure
     .input(
       z.object({
-        role: z.enum(ROLE) || z.undefined(),
+        role: z.nativeEnum(Roles) || z.undefined(),
         userId: z.string() || z.undefined(),
       })
     )
@@ -37,13 +41,20 @@ export const authRouter = router({
     }),
 
   getRole: protectedProcedure
-    .input(z.object({ userId: z.string() }))
+    .input(z.object({ userId: z.string().nullish() }))
     .query(async ({ input, ctx }) => {
-      const userRole = await ctx.prisma.userRole.findUnique({
-        where: {
-          userId: input.userId,
-        },
-      });
-      return userRole;
+      if (input.userId) {
+        const userRole = await ctx.prisma.userRole.findUnique({
+          where: {
+            userId: input.userId,
+          },
+        });
+        return userRole;
+      } else {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "User with thi",
+        });
+      }
     }),
 });

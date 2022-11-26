@@ -18,12 +18,13 @@ const roles = [
 
 export default function Role() {
   const router = useRouter();
-  enum RoleEnums {
-    student = "STUDENT",
-    lecturer = "LECTURER",
+
+  enum Roles {
+    STUDENT = "STUDENT",
+    LECTURER = "LECTURER",
   }
 
-  const [selected, setSelected] = useState<RoleEnums | null>(null);
+  const [selected, setSelected] = useState<Roles | null>(null);
   const { data } = useSession();
   const userId = data?.user?.id;
 
@@ -37,6 +38,7 @@ export default function Role() {
     },
   });
   const handleSubmit = () => {
+    console.log({selected, userId})
     if (selected && userId) {
       mutate({ role: selected, userId: userId });
     }
