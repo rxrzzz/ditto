@@ -12,10 +12,6 @@ export const authRouter = router({
     return ctx.session;
   }),
 
-  getSecretMessage: protectedProcedure.query(() => {
-    return "You are logged in and can see this secret message!";
-  }),
-
   createRole: protectedProcedure
     .input(
       z.object({
@@ -53,7 +49,7 @@ export const authRouter = router({
       } else {
         throw new TRPCError({
           code: "NOT_FOUND",
-          message: "User with thi",
+          message: "User is not logged in. ",
         });
       }
     }),
