@@ -1,9 +1,8 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
-enum RoleEnums {
-  student = "STUDENT",
-  lecturer = "LECTURER",
-}
+
+const ROLE = ["STUDENT", "LECTURER"] as const;
+
 export const authRouter = router({
   getSession: publicProcedure.query(({ ctx }) => {
     return ctx.session;
@@ -16,7 +15,7 @@ export const authRouter = router({
   createRole: protectedProcedure
     .input(
       z.object({
-        role: z.nativeEnum(RoleEnums) || z.undefined(),
+        role: z.enum(ROLE) || z.undefined(),
         userId: z.string() || z.undefined(),
       })
     )

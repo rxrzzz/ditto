@@ -18,7 +18,12 @@ const roles = [
 
 export default function Role() {
   const router = useRouter();
-  const [selected, setSelected] = useState<string | null>(null);
+  enum RoleEnums {
+    student = "STUDENT",
+    lecturer = "LECTURER",
+  }
+
+  const [selected, setSelected] = useState<RoleEnums | null>(null);
   const { data } = useSession();
   const userId = data?.user?.id;
 
@@ -31,11 +36,11 @@ export default function Role() {
       window.alert(error.message);
     },
   });
-  // const handleSubmit = () => {
-  //   if (selected !== "" && userId) {
-  //     mutate({ role: selected.toUpperCase(), userId: userId });
-  //   }
-  // };
+  const handleSubmit = () => {
+    if (selected && userId) {
+      mutate({ role: selected, userId: userId });
+    }
+  };
   return (
     <div className="w-full px-4 py-16">
       <div className="mx-auto w-full max-w-md">
@@ -89,7 +94,8 @@ export default function Role() {
           </div>
           {selected ? (
             <>
-              {/* <button onClick={handleSubmit}>Select Role</button> */}
+              {" "}
+              <button onClick={handleSubmit}>Select Role</button>
             </>
           ) : null}
         </RadioGroup>
