@@ -6,7 +6,7 @@ import { env } from "../../../env/server.mjs";
 import { prisma } from "../../../server/db/client";
 
 export const authOptions: NextAuthOptions = {
-  // Include user.id on session
+  // Include user.id on session object
   callbacks: {
     session({ session, user }) {
       if (session.user) {
@@ -18,14 +18,15 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/login",
   },
-  // Configure one or more authentication providers. Google is the configured provider this time around.
+  /* Configure one or more authentication providers
+  . Google is the configured provider this time around.*/
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
-    // ...add more providers here.
+    // ...you can add more providers here.
   ],
 };
 
