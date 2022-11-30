@@ -21,6 +21,13 @@ export default function Login() {
       >
         Sign In With Google
       </button>
+      <button
+        onClick={() =>
+          signIn("facebook", { callbackUrl: userHasRole ? "/" : "/role" })
+        }
+      >
+        Sign In With Facebook
+      </button>
     </>
   );
 }
